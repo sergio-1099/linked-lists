@@ -28,7 +28,11 @@ class LinkedList
 end
 
 class Node
-  def value
+  attr_accessor :value
+
+  def initialize
+    @value = nil
+    @next_node = nil
   end
 
   def next_node
