@@ -1,9 +1,20 @@
 class LinkedList
+  attr_accessor :head_node
+
   def initialize(value=nil)
-    head_node = Node.new(value)
+    @head_node = nil
   end
 
   def append(value)
+    if (@head_node.nil?)
+      @head_node = Node.new(value)
+    else
+      last_node = @head_node
+      while (last_node.next_node != nil)
+        last_node = last_node.next_node
+      end
+      last_node.next_node = Node.new(value)
+    end
   end
 
   def prepend(value)
@@ -32,13 +43,10 @@ class LinkedList
 end
 
 class Node
-  attr_accessor :value
+  attr_accessor :value, :next_node
 
   def initialize(value=nil, next_node=nil)
     @value = value
     @next_node = next_node
-  end
-
-  def next_node
   end
 end
