@@ -1,4 +1,8 @@
 class LinkedList
+  def initialize(value=nil)
+    head_node = Node.new(value)
+  end
+
   def append(value)
   end
 
@@ -30,9 +34,9 @@ end
 class Node
   attr_accessor :value
 
-  def initialize
-    @value = nil
-    @next_node = nil
+  def initialize(value=nil, next_node=nil)
+    @value = value
+    @next_node = next_node
   end
 
   def next_node
