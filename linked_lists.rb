@@ -18,6 +18,12 @@ class LinkedList
   end
 
   def prepend(value)
+    if (@head_node.nil?)
+      @head_node = Node.new(value)
+    else
+      prepended_node = Node.new(value, @head_node)
+      @head_node = prepended_node
+    end
   end
 
   def size
