@@ -6,6 +6,7 @@ class LinkedList
   end
 
   def append(value)
+    # Create node for head_node if it has not been created
     if (@head_node.nil?)
       @head_node = Node.new(value)
     else
@@ -48,6 +49,7 @@ class LinkedList
     current_index = 0
     last_node = @head_node 
     while (current_index < index)
+      # If attempting to find index out of bounds, display last node of list
       if (last_node.next_node == nil)
         puts "myList.at(#{index}) does NOT exist..."
         puts "Last Node of List: #{last_node}"
