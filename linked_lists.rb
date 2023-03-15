@@ -27,6 +27,13 @@ class LinkedList
   end
 
   def size
+    length = 1
+    last_node = @head_node
+    while (last_node.next_node != nil)
+      last_node = last_node.next_node
+      length += 1
+    end
+    return length
   end
 
   def head
