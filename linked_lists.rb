@@ -45,6 +45,20 @@ class LinkedList
   end
 
   def at(index)
+    current_index = 0
+    last_node = @head_node 
+    while (current_index < index)
+      if (last_node.next_node == nil)
+        puts "myList.at(#{index}) does NOT exist..."
+        puts "Last Node of List: #{last_node}"
+        puts "Index: #{current_index}"
+        print "Value: "
+        return last_node
+      end
+      last_node = last_node.next_node
+      current_index += 1
+    end
+    return last_node
   end
 
   def contains?(value)
