@@ -124,6 +124,15 @@ class LinkedList
   end
 
   def remove_at(index)
+    if (index == 0)
+      @head_node = @head_node.next_node
+    elsif (index == self.size - 1)
+      self.pop
+    else
+      node_before = self.at(index-1)
+      node_after = self.at(index+1)
+      node_before.next_node = node_after
+    end
   end
 end
 
