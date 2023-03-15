@@ -105,6 +105,12 @@ class LinkedList
     end
     puts "( #{last_node.value} ) -> nil"
   end
+
+  def insert_at(value, index)
+  end
+
+  def remove_at(index)
+  end
 end
 
 class Node
