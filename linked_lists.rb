@@ -1,7 +1,7 @@
 class LinkedList
   attr_reader :head_node
 
-  def initialize(value=nil)
+  def initialize
     @head_node = nil
   end
 
@@ -62,6 +62,14 @@ class LinkedList
   end
 
   def contains?(value)
+    return true if @head_node.value == value
+
+    last_node = @head_node
+    while (last_node.next_node != nil)
+      last_node = last_node.next_node
+      return true if last_node.value == value
+    end
+    return false
   end
 
   def find(value)
