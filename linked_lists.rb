@@ -107,6 +107,20 @@ class LinkedList
   end
 
   def insert_at(value, index)
+    inserted_node = Node.new(value)
+    # If index is head (prepending)
+    if (index == 0)
+      self.prepend(value)
+    # If insertion is at the end of list (appending)
+    elsif (index == self.size)
+      self.append(value)
+    else
+      inserted_node = Node.new(value)
+      next_node = self.at(index)
+      inserted_node.next_node = next_node
+      last_node = self.at(index-1)
+      last_node.next_node = inserted_node
+    end
   end
 
   def remove_at(index)
