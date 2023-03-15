@@ -37,6 +37,11 @@ class LinkedList
   end
   
   def tail
+    last_node = @head_node
+    while (last_node.next_node != nil)
+      last_node = last_node.next_node 
+    end
+    return last_node
   end
 
   def at(index)
