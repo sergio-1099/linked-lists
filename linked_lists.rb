@@ -1,5 +1,5 @@
 class LinkedList
-  attr_accessor :head_node
+  attr_reader :head_node
 
   def initialize(value=nil)
     @head_node = nil
@@ -34,9 +34,6 @@ class LinkedList
       length += 1
     end
     return length
-  end
-
-  def head
   end
   
   def tail
