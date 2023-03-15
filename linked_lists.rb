@@ -63,9 +63,13 @@ class LinkedList
 
   def pop
     last_node = @head_node
+    # Checks if next node's pointer is not nil
+    # Yes? Next node is the last node
+    # No? Next node is not the last node and traverse forward
     while (last_node.next_node.next_node != nil)
       last_node = last_node.next_node
     end
+    # If it is, then the current node's pointer will be changed to nil
     last_node.next_node = nil
   end
 
