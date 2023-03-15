@@ -86,6 +86,12 @@ class LinkedList
   end
 
   def to_s
+    last_node = @head_node
+    while (last_node.next_node != nil)
+      print "( #{last_node.value} ) -> "
+      last_node = last_node.next_node
+    end
+    puts "( #{last_node.value} ) -> nil"
   end
 end
 
