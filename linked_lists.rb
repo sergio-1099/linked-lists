@@ -61,6 +61,14 @@ class LinkedList
     return last_node
   end
 
+  def pop
+    last_node = @head_node
+    while (last_node.next_node.next_node != nil)
+      last_node = last_node.next_node
+    end
+    last_node.next_node = nil
+  end
+
   def contains?(value)
     return true if @head_node.value == value
 
